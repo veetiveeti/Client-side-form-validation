@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap');
+
+// Style Variables
+$font: 'Open Sans';
+$bodytext-size: 16px;
+$headline-size: 2em;
+$headline-bold: 800;
+$background-color: #F9F9F9;
+$white: #ffff;
+$black: #0F0F0F;
+$accent-color: #e4314f;
+$dropshadow-color: #E9E9E9;
+$background-image: url(../Assets/ghibli-vertical.jpg);
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    background-color: $background-color;
+    font-family: $font;
+    -webkit-transition: ease-in 2s;
+    -moz-transition: ease-in 2s;
+    -o-transition: ease-in 2s;
+    -ms-transition: ease-in 2s;
+    transition: ease-in 2s;
+}
+
+//Container for registration and image
+
+main {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    margin: 80px auto;
+    max-height: fit-content;
+    max-width: 980px;
+    background-color: $white;
+    filter: drop-shadow(0 0 0.95rem $dropshadow-color);
+}
+
+//Left column; registration section
+.registration {
+    padding: 80px; 
+    height: inherit;
+}
+
+//Header contains headline text and registering with Social Media accounts.
+header {
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+//Create Account headline text
+.create-account {
+    margin-bottom: 20px;
+    font-size: $headline-size;
+    font-weight: $headline-bold;
+    color: $accent-color;
+}
+
+
+//Register with social media accounts
+.social-media-account-registration {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    margin-right: 80px;
+    margin-left: 80px;
+    padding: 0;
+}
+
+//Registration forms
+.email-registration-form {
+    display: grid;
+    width: 100%;
+}
+
+.registration-form {
+    display: inherit;
+    grid-gap: 10px;
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+.registration-form label {
+    display: flex;
+}
+
+.registration-form input {
+    padding: 10px;
+    background-color: $background-color;
+    border-color: $dropshadow-color;
+    border-radius: 6px;
+    border-style: solid;
+    width: 100%;
+}
+
+.agree-terms {
+    margin-bottom: 40px;
+}
+
+
+//Buttons
+.sign-buttons {
+    justify-content: space-between;
+    width: 100%;
+}
+
+button {
+    padding: 15px;
+    color: $white;
+    font-size: $bodytext-size;
+    border-radius: 6px;
+}
+
+.sign-up-btn {
+    background-color: $accent-color;
+    border-style: none;
+    width: 40%;
+}
+
+.sign-in-btn {
+    display: inline-block;
+    border-color: $accent-color;
+    background-color: $white;
+    border-style: solid;
+    color: $accent-color;
+    width: 40%;
+}
+
+.sign-in-btn:hover {
+    transition-duration: 0.4s;
+    box-shadow: inset 6.5em 0 0 0 var(--hover);
+    background-color: $accent-color;
+    color: $white;
+}
+
+//Right column; illustration
+.illustration-image {
+    background-image: $background-image;
+    background-size: cover;
+    height: inherit;
+}

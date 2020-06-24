@@ -1,0 +1,122 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  background-color: #F9F9F9;
+  font-family: "Open Sans";
+  -webkit-transition: ease-in 2s;
+  -moz-transition: ease-in 2s;
+  -o-transition: ease-in 2s;
+  -ms-transition: ease-in 2s;
+  transition: ease-in 2s;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  margin: 80px auto;
+  max-height: fit-content;
+  max-width: 980px;
+  background-color: #ffff;
+  filter: drop-shadow(0 0 0.95rem #E9E9E9);
+}
+
+.registration {
+  padding: 80px;
+  height: inherit;
+}
+
+header {
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.create-account {
+  margin-bottom: 20px;
+  font-size: 2em;
+  font-weight: 800;
+  color: #e4314f;
+}
+
+.social-media-account-registration {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  margin-right: 80px;
+  margin-left: 80px;
+  padding: 0;
+}
+
+.email-registration-form {
+  display: grid;
+  width: 100%;
+}
+
+.registration-form {
+  display: inherit;
+  grid-gap: 10px;
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+.registration-form label {
+  display: flex;
+}
+
+.registration-form input {
+  padding: 10px;
+  background-color: #F9F9F9;
+  border-color: #E9E9E9;
+  border-radius: 6px;
+  border-style: solid;
+  width: 100%;
+}
+
+.agree-terms {
+  margin-bottom: 40px;
+}
+
+.sign-buttons {
+  justify-content: space-between;
+  width: 100%;
+}
+
+button {
+  padding: 15px;
+  color: #ffff;
+  font-size: 16px;
+  border-radius: 6px;
+}
+
+.sign-up-btn {
+  background-color: #e4314f;
+  border-style: none;
+  width: 40%;
+}
+
+.sign-in-btn {
+  display: inline-block;
+  border-color: #e4314f;
+  background-color: #ffff;
+  border-style: solid;
+  color: #e4314f;
+  width: 40%;
+}
+
+.sign-in-btn:hover {
+  transition-duration: 0.4s;
+  box-shadow: inset 6.5em 0 0 0 var(--hover);
+  background-color: #e4314f;
+  color: #ffff;
+}
+
+.illustration-image {
+  background-image: url(../Assets/ghibli-vertical.jpg);
+  background-size: cover;
+  height: inherit;
+}
+
+/*# sourceMappingURL=styles.css.map */
