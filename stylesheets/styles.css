@@ -17,7 +17,7 @@ body {
 main {
   display: grid;
   grid-template-columns: 50% 50%;
-  margin: 80px auto;
+  margin: 50px auto;
   max-height: fit-content;
   max-width: 980px;
   background-color: #ffff;
@@ -38,11 +38,12 @@ header {
   margin-bottom: 20px;
   font-size: 2em;
   font-weight: 800;
-  color: #e4314f;
+  color: #0F0F0F;
 }
 
 .social-media-account-registration {
   display: flex;
+  color: #34c2eb;
   justify-content: space-between;
   list-style: none;
   margin-right: 80px;
@@ -64,6 +65,7 @@ header {
 
 .registration-form label {
   display: flex;
+  margin-bottom: 6px;
 }
 
 .registration-form input {
@@ -80,6 +82,7 @@ header {
 }
 
 .sign-buttons {
+  display: flex;
   justify-content: space-between;
   width: 100%;
 }
@@ -88,28 +91,28 @@ button {
   padding: 15px;
   color: #ffff;
   font-size: 16px;
-  border-radius: 6px;
+  border-radius: 25px;
+  font-weight: 500;
 }
 
 .sign-up-btn {
-  background-color: #e4314f;
+  background-image: linear-gradient(to left, #34c2eb, #1a7fc3);
   border-style: none;
-  width: 40%;
+  width: 48%;
 }
 
 .sign-in-btn {
-  display: inline-block;
-  border-color: #e4314f;
+  border-color: #34c2eb;
   background-color: #ffff;
   border-style: solid;
-  color: #e4314f;
-  width: 40%;
+  color: #34c2eb;
+  width: 48%;
 }
 
 .sign-in-btn:hover {
-  transition-duration: 0.4s;
+  transition: all 0.2s ease-in 0s;
   box-shadow: inset 6.5em 0 0 0 var(--hover);
-  background-color: #e4314f;
+  background-image: linear-gradient(to left, #34c2eb, #1a7fc3);
   color: #ffff;
 }
 
@@ -117,6 +120,50 @@ button {
   background-image: url(../Assets/ghibli-vertical.jpg);
   background-size: cover;
   height: inherit;
+}
+
+@media screen and (max-width: 780px) {
+  main {
+    display: grid;
+    grid-template-columns: 100%;
+    margin: 0 auto;
+    max-height: fit-content;
+    max-width: 740px;
+    background-color: #ffff;
+    filter: drop-shadow(0 0 0.95rem #E9E9E9);
+  }
+
+  .sign-up-btn {
+    background-color: #34c2eb;
+    border-style: none;
+    width: 48%;
+  }
+
+  .sign-in-btn {
+    border-color: #34c2eb;
+    background-color: #ffff;
+    border-style: solid;
+    color: #34c2eb;
+    width: 48%;
+  }
+}
+@media screen and (max-width: 560px) {
+  .registration {
+    padding: 40px;
+  }
+
+  .sign-buttons {
+    flex-direction: column;
+  }
+
+  .sign-up-btn {
+    margin-bottom: 20px;
+    width: 100%;
+  }
+
+  .sign-in-btn {
+    width: 100%;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */
