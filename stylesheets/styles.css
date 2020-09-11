@@ -1,4 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap");
+input:invalid {
+  border: 2px #a32525;
+}
+
+input:valid {
+  border: 2px #0F0F0F;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -7,29 +15,37 @@
 body {
   background-color: #F9F9F9;
   font-family: "Open Sans";
-  -webkit-transition: ease-in 2s;
-  -moz-transition: ease-in 2s;
-  -o-transition: ease-in 2s;
-  -ms-transition: ease-in 2s;
-  transition: ease-in 2s;
+  animation: fadeInAnimation ease 0.5s;
+  animation-iteration-count: 1;
+  animation-fill-mode: none;
 }
 
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 main {
   display: grid;
-  grid-template-columns: 50% 50%;
-  margin: 50px auto;
+  grid-template-columns: 40% 60%;
+  margin: 0 auto;
   max-height: fit-content;
-  max-width: 980px;
   background-color: #ffff;
   filter: drop-shadow(0 0 0.95rem #E9E9E9);
 }
 
 .registration {
-  padding: 80px;
+  padding: 24%;
+  padding-top: 80px;
+  padding-bottom: 80px;
   height: inherit;
 }
 
 header {
+  grid-column: span 2;
   margin-bottom: 40px;
   text-align: center;
 }
@@ -46,21 +62,35 @@ header {
   color: #34c2eb;
   justify-content: space-between;
   list-style: none;
-  margin-right: 80px;
-  margin-left: 80px;
+  margin-right: 20%;
+  margin-left: 20%;
   padding: 0;
 }
 
 .email-registration-form {
   display: grid;
+  grid-template-columns: 50% 50%;
   width: 100%;
 }
 
 .registration-form {
   display: inherit;
+  grid-template-columns: 50% 50%;
+  grid-column: span 2;
   grid-gap: 10px;
   width: 100%;
-  margin-bottom: 40px;
+}
+
+.email, .password, .confirm-password, .agree-terms, .sign-buttons {
+  grid-column: span 2;
+}
+
+.name {
+  grid-column: 1;
+}
+
+.username {
+  grid-column: 2;
 }
 
 .registration-form label {
@@ -78,19 +108,27 @@ header {
 }
 
 .agree-terms {
-  margin-bottom: 40px;
+  margin-top: 10px;
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.agree-terms #terms {
+  width: 20px;
 }
 
 .sign-buttons {
   display: flex;
   justify-content: space-between;
   width: 100%;
+  margin-top: 10px;
 }
 
 button {
   padding: 15px;
   color: #ffff;
-  font-size: 16px;
+  font-size: 15px;
   border-radius: 25px;
   font-weight: 500;
 }
@@ -98,7 +136,7 @@ button {
 .sign-up-btn {
   background-image: linear-gradient(to left, #34c2eb, #1a7fc3);
   border-style: none;
-  width: 48%;
+  width: 50%;
 }
 
 .sign-in-btn {
@@ -106,14 +144,25 @@ button {
   background-color: #ffff;
   border-style: solid;
   color: #34c2eb;
-  width: 48%;
+  width: 50%;
 }
 
-.sign-in-btn:hover {
+.sign-up-btn:hover, .sign-up-btn:focus {
+  transition: all 0.2s ease-in 0s;
+  background-image: linear-gradient(to left, #50cff1, #3192d3);
+  color: #ffff;
+}
+
+.sign-in-btn:hover, .sign-in-btn:focus {
   transition: all 0.2s ease-in 0s;
   box-shadow: inset 6.5em 0 0 0 var(--hover);
-  background-image: linear-gradient(to left, #34c2eb, #1a7fc3);
+  background-image: linear-gradient(to left, #50cff1, #3192d3);
   color: #ffff;
+}
+
+.existing-members {
+  grid-column: span 2;
+  margin-top: 20px;
 }
 
 .illustration-image {
@@ -136,7 +185,7 @@ button {
   .sign-up-btn {
     background-color: #34c2eb;
     border-style: none;
-    width: 48%;
+    width: 100%;
   }
 
   .sign-in-btn {

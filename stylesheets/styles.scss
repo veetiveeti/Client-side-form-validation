@@ -1,17 +1,36 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap');
 
 // Style Variables
+$background-image: url(../Assets/ghibli-vertical.jpg);
+// :: Typography
 $font: 'Open Sans';
-$bodytext-size: 16px;
+$bodytext-size: 15px;
 $headline-size: 2em;
 $headline-bold: 800;
+// :: Colors
 $background-color: #F9F9F9;
 $white: #ffff;
 $black: #0F0F0F;
 $accent-color:rgb(52, 194, 235);
 $dropshadow-color: #E9E9E9;
-$background-image: url(../Assets/ghibli-vertical.jpg);
+// :: Gradient Variables for Buttons
+$button-default: linear-gradient(to left, rgb(52, 194, 235), rgb(26, 127, 195));
+$button-hover: linear-gradient(to left, rgb(80, 207, 241), rgb(49, 146, 211));
 
+// Validation styles
+$valid: $black;
+$invalid: rgb(163, 37, 37);
+
+input:invalid {
+    border: 2px $invalid;
+}
+
+input:valid {
+    border: 2px $valid;
+}
+
+
+// CSS 
 * {
     box-sizing: border-box;
     margin: 0;
@@ -20,33 +39,43 @@ $background-image: url(../Assets/ghibli-vertical.jpg);
 body {
     background-color: $background-color;
     font-family: $font;
-    -webkit-transition: ease-in 2s;
-    -moz-transition: ease-in 2s;
-    -o-transition: ease-in 2s;
-    -ms-transition: ease-in 2s;
-    transition: ease-in 2s;
-}
+    animation: fadeInAnimation ease 0.5s;
+    animation-iteration-count: 1; 
+    animation-fill-mode: none; 
+} 
+
+// fadeInAnimation on page load
+@keyframes fadeInAnimation { 
+    0% { 
+        opacity: 0; 
+    } 
+    100% { 
+        opacity: 1; 
+     } 
+} 
 
 //Container for registration and image
 
 main {
     display: grid;
-    grid-template-columns: 50% 50%;
-    margin: 50px auto;
+    grid-template-columns: 40% 60%;
+    margin: 0 auto;
     max-height: fit-content;
-    max-width: 980px;
     background-color: $white;
     filter: drop-shadow(0 0 0.95rem $dropshadow-color);
 }
 
 //Left column; registration section
 .registration {
-    padding: 80px; 
+    padding: 24%;
+    padding-top: 80px;
+    padding-bottom: 80px; 
     height: inherit;
 }
 
 //Header contains headline text and registering with Social Media accounts.
 header {
+    grid-column: span 2;
     margin-bottom: 40px;
     text-align: center;
 }
@@ -66,22 +95,38 @@ header {
     color: $accent-color;
     justify-content: space-between;
     list-style: none;
-    margin-right: 80px;
-    margin-left: 80px;
+    margin-right: 20%;
+    margin-left: 20%;
     padding: 0;
 }
 
-//Registration forms
+//Registration forms & defining its Grid
 .email-registration-form {
     display: grid;
+    grid-template-columns: 50% 50%;
     width: 100%;
 }
 
 .registration-form {
     display: inherit;
+    grid-template-columns: 50% 50%;
+    grid-column: span 2;
     grid-gap: 10px;
     width: 100%;
-    margin-bottom: 40px;
+    //margin-bottom: 40px;
+}
+
+//Name input field = column 1; Username input field = column 2; Everything else spans 2 columns.
+.email, .password, .confirm-password, .agree-terms, .sign-buttons {
+    grid-column: span 2;
+}
+
+.name {
+    grid-column: 1;
+}
+
+.username {
+    grid-column: 2;
 }
 
 .registration-form label {
@@ -99,7 +144,14 @@ header {
 }
 
 .agree-terms {
-    margin-bottom: 40px;
+    margin-top: 10px;
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+}
+
+.agree-terms #terms {
+    width: 20px;
 }
 
 
@@ -108,6 +160,7 @@ header {
     display: flex;
     justify-content: space-between;
     width: 100%;
+    margin-top: 10px;
     
 }
 
@@ -120,9 +173,9 @@ button {
 }
 
 .sign-up-btn {
-    background-image: linear-gradient(to left, rgb(52, 194, 235), rgb(26, 127, 195));
+    background-image: $button-default;
     border-style: none;
-    width: 48%;
+    width: 50%;
 }
 
 .sign-in-btn {
@@ -130,14 +183,25 @@ button {
     background-color: $white;
     border-style: solid;
     color: $accent-color;
-    width: 48%;
+    width: 50%;
 }
 
-.sign-in-btn:hover {
+.sign-up-btn:hover, .sign-up-btn:focus {
+    transition: all 0.2s ease-in 0s;
+    background-image: $button-hover;
+    color: $white;
+}
+
+.sign-in-btn:hover, .sign-in-btn:focus {
     transition: all 0.2s ease-in 0s;
     box-shadow: inset 6.5em 0 0 0 var(--hover);
-    background-image: linear-gradient(to left, rgb(52, 194, 235), rgb(26, 127, 195));
+    background-image: $button-hover;
     color: $white;
+}
+
+.existing-members {
+    grid-column: span 2;
+    margin-top: 20px;
 }
 
 //Right column; illustration
@@ -162,7 +226,7 @@ button {
     .sign-up-btn {
         background-color: $accent-color;
         border-style: none;
-        width: 48%;
+        width: 100%;
     }
     .sign-in-btn {
         border-color: $accent-color;
