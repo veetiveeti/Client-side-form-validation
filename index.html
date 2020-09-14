@@ -3,15 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registration Form</title>
+    <title>Register Now</title>
     <link href="./stylesheets/styles.css" rel="stylesheet">
-    <!--<a href='https://www.freepik.com/free-photos-vectors/logo'>Logo vector created by alicia_mb - www.freepik.com</a>-->
     <script src="https://kit.fontawesome.com/8ca29b4f6e.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <main>
         <section class="illustration-image">
-            <!--<img src="./Assets/ghibli-vertical.jpg" alt="#">-->
         </section>
         <section class="registration">
             <header>
@@ -31,7 +29,7 @@
                     </div>
                     <div class="username">
                         <label for="username">Username</label>
-                        <input type="text" name="name" id="username" required>
+                        <input type="text" name="name" id="username" minlength="3" maxlength="12" required>
                     </div>
                     <div class="email">
                         <label for="email">Email</label>
@@ -43,7 +41,7 @@
                     </div>
                     <div class="confirm-password">
                         <label for="confirm-password">Confirm Password</label>
-                        <input type="password" name="confirm-password" id="confirm-password"  required>
+                        <input type="password" name="confirm_password" id="confirm_password"  required>
                     </div>
                     <div class="agree-terms">
                         <input type="checkbox" id="terms" name="terms" unchecked required>
@@ -51,15 +49,12 @@
                     </div>
                     <div class="sign-buttons">
                         <button class="sign-up-btn">Sign Up</button>
-                        <!--<button class="sign-in-btn">Or Sign In</button>-->
                     </div>
                 </form>
-                  <p class="existing-members">Already a member? <a href=#>Sign In</a> </p>
+                  <p class="existing-members">Already a member? <a href="/Users/veeti/Documents/GitHub/registration-form/signin.html">Sign In</a> </p>
             </article>
         </section>
     </main>
-
-
 
 <script src="script.js"></script>   
 </body>

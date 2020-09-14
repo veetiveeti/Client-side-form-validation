@@ -30,13 +30,14 @@ input:valid {
 }
 
 
-// CSS 
+// Styles 
 * {
     box-sizing: border-box;
     margin: 0;
 }
 
 body {
+    height: 100%;
     background-color: $background-color;
     font-family: $font;
     animation: fadeInAnimation ease 0.5s;
@@ -60,7 +61,9 @@ main {
     display: grid;
     grid-template-columns: 40% 60%;
     margin: 0 auto;
-    max-height: fit-content;
+    //max-height: fit-content;
+    min-height: 100vh;
+    height: 100vh;
     background-color: $white;
     filter: drop-shadow(0 0 0.95rem $dropshadow-color);
 }
@@ -71,6 +74,7 @@ main {
     padding-top: 80px;
     padding-bottom: 80px; 
     height: inherit;
+    width: 100%;
 }
 
 //Header contains headline text and registering with Social Media accounts.
@@ -100,7 +104,7 @@ header {
     padding: 0;
 }
 
-//Registration forms & defining its Grid
+//Grid for Registration Form
 .email-registration-form {
     display: grid;
     grid-template-columns: 50% 50%;
@@ -117,9 +121,6 @@ header {
 }
 
 //Name input field = column 1; Username input field = column 2; Everything else spans 2 columns.
-.email, .password, .confirm-password, .agree-terms, .sign-buttons {
-    grid-column: span 2;
-}
 
 .name {
     grid-column: 1;
@@ -127,6 +128,10 @@ header {
 
 .username {
     grid-column: 2;
+}
+
+.email, .password, .confirm-password, .agree-terms, .sign-buttons {
+    grid-column: span 2;
 }
 
 .registration-form label {
@@ -175,7 +180,7 @@ button {
 .sign-up-btn {
     background-image: $button-default;
     border-style: none;
-    width: 50%;
+    width: 40%;
 }
 
 .sign-in-btn {
@@ -223,6 +228,10 @@ button {
         background-color: $white;
         filter: drop-shadow(0 0 0.95rem $dropshadow-color);
     }
+    //Right column; illustration
+.illustration-image {
+    display: none;
+}
     .sign-up-btn {
         background-color: $accent-color;
         border-style: none;
@@ -237,9 +246,9 @@ button {
     }
 }
 
-// < 560px screens Media Query
+// < 620px screens Media Query
 
-@media screen and (max-width: 560px) {
+@media screen and (max-width: 620px) {
     .registration {
         padding: 40px; 
     }
