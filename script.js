@@ -14,9 +14,3 @@ function validatePassword() {
 
 //password.onchange = validatePassword; <--Enable to see match on every change
 confirm_password.onkeyup = validatePassword;
-
-function ignoreValidatePassword() {
-    if(confirm_password = false) {
-        confirm_password.onkeyup = null;
-    }
-}

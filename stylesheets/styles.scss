@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap');
 
 // Style Variables
-$background-image: url(../Assets/ghibli-vertical.jpg);
+$background-image: url(../Assets/moon.svg);
 // :: Typography
 $font: 'Open Sans';
 $bodytext-size: 15px;
@@ -9,13 +9,15 @@ $headline-size: 2em;
 $headline-bold: 800;
 // :: Colors
 $background-color: #F9F9F9;
+$background-green: #bae0f9;
 $white: #ffff;
 $black: #0F0F0F;
 $accent-color:rgb(52, 194, 235);
 $dropshadow-color: #E9E9E9;
-// :: Gradient Variables for Buttons
-$button-default: linear-gradient(to left, rgb(52, 194, 235), rgb(26, 127, 195));
-$button-hover: linear-gradient(to left, rgb(80, 207, 241), rgb(49, 146, 211));
+// :: Buttons
+$button-default: #f2a638;
+$button-hover: #eeb04c;
+$button-drop-shadow: 4px 10px 61px -32px rgba(0,0,0,0.75);
 
 // Validation styles
 $valid: $black;
@@ -37,8 +39,8 @@ input:valid {
 }
 
 body {
-    height: 100%;
-    background-color: $background-color;
+    height: 100vh;
+    width: 100vw;
     font-family: $font;
     animation: fadeInAnimation ease 0.5s;
     animation-iteration-count: 1; 
@@ -56,21 +58,18 @@ body {
 } 
 
 //Container for registration and image
-
 main {
     display: grid;
     grid-template-columns: 40% 60%;
     margin: 0 auto;
+    height: 100%;
     //max-height: fit-content;
-    min-height: 100vh;
-    height: 100vh;
     background-color: $white;
-    filter: drop-shadow(0 0 0.95rem $dropshadow-color);
 }
 
 //Left column; registration section
 .registration {
-    padding: 24%;
+    padding: 20%;
     padding-top: 80px;
     padding-bottom: 80px; 
     height: inherit;
@@ -96,7 +95,7 @@ header {
 //Register with social media accounts
 .social-media-account-registration {
     display: flex;
-    color: $accent-color;
+    color: $button-default;
     justify-content: space-between;
     list-style: none;
     margin-right: 20%;
@@ -107,21 +106,19 @@ header {
 //Grid for Registration Form
 .email-registration-form {
     display: grid;
-    grid-template-columns: 50% 50%;
     width: 100%;
 }
 
 .registration-form {
     display: inherit;
-    grid-template-columns: 50% 50%;
+    grid-template-columns: 49% 49%;
     grid-column: span 2;
-    grid-gap: 10px;
+    grid-gap: 2%;
     width: 100%;
     //margin-bottom: 40px;
 }
 
 //Name input field = column 1; Username input field = column 2; Everything else spans 2 columns.
-
 .name {
     grid-column: 1;
 }
@@ -159,26 +156,26 @@ header {
     width: 20px;
 }
 
-
 //Buttons
 .sign-buttons {
     display: flex;
     justify-content: space-between;
     width: 100%;
     margin-top: 10px;
-    
+    filter: drop-shadow(0 0 0.95rem $dropshadow-color);
 }
 
 button {
     padding: 15px;
     color: $white;
     font-size: $bodytext-size;
-    border-radius: 25px;
+    border-radius: 8px;
     font-weight: 500;
+    cursor: pointer;
 }
 
 .sign-up-btn {
-    background-image: $button-default;
+    background-color: $button-default;
     border-style: none;
     width: 40%;
 }
@@ -193,31 +190,37 @@ button {
 
 .sign-up-btn:hover, .sign-up-btn:focus {
     transition: all 0.2s ease-in 0s;
-    background-image: $button-hover;
+    background-color: $button-hover;
     color: $white;
 }
 
 .sign-in-btn:hover, .sign-in-btn:focus {
     transition: all 0.2s ease-in 0s;
     box-shadow: inset 6.5em 0 0 0 var(--hover);
-    background-image: $button-hover;
+    background-color: $button-hover;
     color: $white;
 }
 
 .existing-members {
     grid-column: span 2;
-    margin-top: 20px;
+    margin-top: 55px;
 }
 
-//Right column; illustration
+//left column; illustration
 .illustration-image {
+    background-color: $background-green;
+}
+
+.image {
     background-image: $background-image;
-    background-size: cover;
-    height: inherit;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100%;
+    width: 100%;
+    margin-left: 40px;
 }
 
 // < 780px screens Media Query
-
 @media screen and (max-width: 780px) {
     main {
         display: grid;
@@ -226,14 +229,13 @@ button {
         max-height: fit-content;
         max-width: 740px;
         background-color: $white;
-        filter: drop-shadow(0 0 0.95rem $dropshadow-color);
     }
     //Right column; illustration
 .illustration-image {
     display: none;
 }
     .sign-up-btn {
-        background-color: $accent-color;
+        background-color: $button-default;
         border-style: none;
         width: 100%;
     }
@@ -247,10 +249,16 @@ button {
 }
 
 // < 620px screens Media Query
-
 @media screen and (max-width: 620px) {
     .registration {
         padding: 40px; 
+    }
+    .name {
+        grid-column: span 2;
+    }
+    
+    .username {
+        grid-column: span 2;
     }
     .sign-buttons {
         flex-direction: column;

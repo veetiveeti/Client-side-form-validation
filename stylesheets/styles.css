@@ -13,8 +13,8 @@ input:valid {
 }
 
 body {
-  height: 100%;
-  background-color: #F9F9F9;
+  height: 100vh;
+  width: 100vw;
   font-family: "Open Sans";
   animation: fadeInAnimation ease 0.5s;
   animation-iteration-count: 1;
@@ -33,14 +33,12 @@ main {
   display: grid;
   grid-template-columns: 40% 60%;
   margin: 0 auto;
-  min-height: 100vh;
-  height: 100vh;
+  height: 100%;
   background-color: #ffff;
-  filter: drop-shadow(0 0 0.95rem #E9E9E9);
 }
 
 .registration {
-  padding: 24%;
+  padding: 20%;
   padding-top: 80px;
   padding-bottom: 80px;
   height: inherit;
@@ -62,7 +60,7 @@ header {
 
 .social-media-account-registration {
   display: flex;
-  color: #34c2eb;
+  color: #f2a638;
   justify-content: space-between;
   list-style: none;
   margin-right: 20%;
@@ -72,15 +70,14 @@ header {
 
 .email-registration-form {
   display: grid;
-  grid-template-columns: 50% 50%;
   width: 100%;
 }
 
 .registration-form {
   display: inherit;
-  grid-template-columns: 50% 50%;
+  grid-template-columns: 49% 49%;
   grid-column: span 2;
-  grid-gap: 10px;
+  grid-gap: 2%;
   width: 100%;
 }
 
@@ -126,18 +123,20 @@ header {
   justify-content: space-between;
   width: 100%;
   margin-top: 10px;
+  filter: drop-shadow(0 0 0.95rem #E9E9E9);
 }
 
 button {
   padding: 15px;
   color: #ffff;
   font-size: 15px;
-  border-radius: 25px;
+  border-radius: 8px;
   font-weight: 500;
+  cursor: pointer;
 }
 
 .sign-up-btn {
-  background-image: linear-gradient(to left, #34c2eb, #1a7fc3);
+  background-color: #f2a638;
   border-style: none;
   width: 40%;
 }
@@ -152,26 +151,33 @@ button {
 
 .sign-up-btn:hover, .sign-up-btn:focus {
   transition: all 0.2s ease-in 0s;
-  background-image: linear-gradient(to left, #50cff1, #3192d3);
+  background-color: #eeb04c;
   color: #ffff;
 }
 
 .sign-in-btn:hover, .sign-in-btn:focus {
   transition: all 0.2s ease-in 0s;
   box-shadow: inset 6.5em 0 0 0 var(--hover);
-  background-image: linear-gradient(to left, #50cff1, #3192d3);
+  background-color: #eeb04c;
   color: #ffff;
 }
 
 .existing-members {
   grid-column: span 2;
-  margin-top: 20px;
+  margin-top: 55px;
 }
 
 .illustration-image {
-  background-image: url(../Assets/ghibli-vertical.jpg);
-  background-size: cover;
-  height: inherit;
+  background-color: #bae0f9;
+}
+
+.image {
+  background-image: url(../Assets/moon.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100%;
+  width: 100%;
+  margin-left: 40px;
 }
 
 @media screen and (max-width: 780px) {
@@ -182,7 +188,6 @@ button {
     max-height: fit-content;
     max-width: 740px;
     background-color: #ffff;
-    filter: drop-shadow(0 0 0.95rem #E9E9E9);
   }
 
   .illustration-image {
@@ -190,7 +195,7 @@ button {
   }
 
   .sign-up-btn {
-    background-color: #34c2eb;
+    background-color: #f2a638;
     border-style: none;
     width: 100%;
   }
@@ -206,6 +211,14 @@ button {
 @media screen and (max-width: 620px) {
   .registration {
     padding: 40px;
+  }
+
+  .name {
+    grid-column: span 2;
+  }
+
+  .username {
+    grid-column: span 2;
   }
 
   .sign-buttons {
